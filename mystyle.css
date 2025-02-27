@@ -1,0 +1,532 @@
+/* Estilo de la tabla de servicios */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.service-table th, .service-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.service-table th {
+    background-color: #004b87;
+    color: white;
+}
+
+.service-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.service-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+/* Sección de incidentes */
+.incident-section {
+    text-align: center;
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.incident-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.incident-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilo de la imagen de incidentes */
+.incident-image {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilo para el formulario */
+.incident-form {
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.incident-form .form-group {
+    margin-bottom: 15px;
+}
+
+.incident-form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.incident-form input,
+.incident-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.incident-form button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #004b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.incident-form button.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo de la tabla de incidentes */
+.incident-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+.incident-table th,
+.incident-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.incident-table th {
+    background-color: #004b87;
+    color: white;
+}
+
+.incident-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.incident-table tr:hover {
+    background-color: #e1e1e1;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004b87;
+    color: white;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Barra de navegación */
+.menu-nav {
+    background-color: #004b87;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.menu-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-nav a:hover,
+.menu-nav a.active {
+    background-color: #005bb5;
+}
+
+/* Sección de solicitudes */
+.request-section {
+    text-align: center;
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.request-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilo de la imagen de solicitudes */
+.request-image {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilo para el formulario de solicitud */
+.request-form {
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.request-form .form-group {
+    margin-bottom: 15px;
+}
+
+.request-form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.request-form input,
+.request-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.request-form button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #004b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.request-form button.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo de la tabla de solicitudes */
+.request-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+.request-table th,
+.request-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.request-table th {
+    background-color: #004b87;
+    color: white;
+}
+
+.request-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.request-table tr:hover {
+    background-color: #e1e1e1;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004b87;
+    color: white;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Barra de navegación */
+.menu-nav {
+    background-color: #004b87;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.menu-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-nav a:hover,
+.menu-nav a.active {
+    background-color: #005bb5;
+}
+
+/* Sección de accesos */
+.access-section {
+    text-align: center;
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.access-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.access-section p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilo de la imagen de accesos */
+.access-image {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilo para el formulario de acceso */
+.access-form {
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.access-form .form-group {
+    margin-bottom: 15px;
+}
+
+.access-form label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.access-form input,
+.access-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.access-form button.submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: #004b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.access-form button.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004b87;
+    color: white;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Barra de navegación */
+.menu-nav {
+    background-color: #004b87;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.menu-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-nav a:hover,
+.menu-nav a.active {
+    background-color: #005bb5;
+}
+
+/* Sección de contacto */
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-info h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    color: #004b87;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.contact-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.contact-item ul li {
+    margin-bottom: 5px;
+}
+
+.contact-item ul li a {
+    color: #004b87;
+    text-decoration: none;
+}
+
+.contact-item ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Imagen de contacto */
+.contact-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004b87;
+    color: white;
+    font-size: 1rem;
+    margin-top: 50px;
+}

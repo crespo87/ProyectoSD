@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Accesos - Service Desk</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="menu-nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="incidentes.html">incidentes</a>
+        <a href="request.html">Solicitar</a>
+        <a href="folders.html">Accesos a Folder</a>
+        <a href="contact.html">Contacto</a>
+    </nav>
+
+    <!-- Sección de accesos -->
+    <div class="access-section">
+        <!-- Imagen de accesos -->
+        <img src="folder1.jpg" alt="Imagen de Accesos" class="access-image">
+
+        <h1>Solicitar Acceso a Folder</h1>
+        <p>Por favor, completa el siguiente formulario para solicitar acceso a un folder en particular.</p>
+
+        <!-- Formulario de acceso -->
+        <form action="submit_access_request.php" method="POST" class="access-form">
+            <div class="form-group">
+                <label for="folder-path">Ruta del Folder:</label>
+                <input type="text" id="folder-path" name="folder-path" placeholder="Ingresa la ruta del folder" required>
+            </div>
+            <div class="form-group">
+                <label for="access-type">Tipo de Acceso:</label>
+                <select id="access-type" name="access-type" required>
+                    <option value="lectura">Lectura</option>
+                    <option value="lectura-escritura">Lectura y Escritura</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Solicitud</button>
+        </form>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 Service Desk. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

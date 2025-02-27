@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>Incidentes - Service Desk</title>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="menu-nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="incidentes.html">incidentes</a>
+        <a href="request.html">Solicitar</a>
+        <a href="folders.html">Accesos a Folder</a>
+        <a href="contact.html">Contacto</a>
+    </nav>
+
+    <!-- Sección de incidentes -->
+    <div class="incident-section">
+
+        <h1>Reportar un Incidente</h1>
+        <p>Si has encontrado un incidente o un problema, por favor completa el siguiente formulario con tu nombre de usuario y la descripción del problema.</p>
+
+        <!-- Formulario de reporte de incidente -->
+        <form action="submit_incident.php" method="POST" class="incident-form">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción del Problema:</label>
+                <textarea id="description" name="description" rows="5" placeholder="Describe el problema aquí..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Incidente</button>
+        </form>
+
+        <!-- Tabla de prioridades de incidentes -->
+        <h2>Tabla de Prioridades de Incidentes</h2>
+        <table class="incident-table">
+            <thead>
+                <tr>
+                    <th>Prioridad</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Baja</td>
+                    <td>Incidente menor, sin impacto en la operatividad.</td>
+                </tr>
+                <tr>
+                    <td>Media</td>
+                    <td>Problema que afecta parcialmente, pero con soluciones temporales.</td>
+                </tr>
+                <tr>
+                    <td>Alta</td>
+                    <td>Incidente crítico que afecta el funcionamiento principal del sistema o servicio.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 Service Desk. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

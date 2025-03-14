@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mystyle.css">
     <title>Contacto - Service Desk</title>
+    <script>
+        // Función para manejar el envío del formulario y mostrar el mensaje de éxito
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita que se recargue la página al enviar el formulario
+
+            // Mostrar el mensaje de agradecimiento
+            alert("Gracias por tu mensaje, nos contactaremos contigo lo antes posible");
+
+            // Limpiar el formulario después de enviarlo
+            event.target.reset();
+        }
+    </script>
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="menu-nav">
         <a href="index.html" class="active">Inicio</a>
-        <a href="incidentes.html">incidentes</a>
+        <a href="incidentes.html">Incidentes</a>
         <a href="request.html">Solicitar</a>
         <a href="folders.html">Accesos a Folder</a>
         <a href="contact.html">Contacto</a>
@@ -19,44 +31,40 @@
     <!-- Sección de contacto -->
     <div class="contact-section">
         <div class="contact-info">
+            <br>
+            <br>
             <h1>Contacta a Service Desk</h1>
             <p>Para cualquier consulta o solicitud, puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
 
+            <!-- Formulario en la sección de Teléfono -->
             <div class="contact-item">
-                <h3>Teléfono</h3>
-                <p>Llámanos al: <strong>+123 456 7890</strong></p>
-            </div>
+        
+                <form onsubmit="enviarFormulario(event)">
+                    <label for="usuario-tel">Usuario:</label>
+                    <input type="text" id="usuario-tel" name="usuario" required>
 
-            <div class="contact-item">
-                <h3>Correo Electrónico</h3>
-                <p>Envíanos un correo a: <strong>support@servicedesk.com</strong></p>
-            </div>
+                    <label for="correo-tel">Correo Electrónico:</label>
+                    <input type="email" id="correo-tel" name="correo" required>
 
-            <div class="contact-item">
-                <h3>Chat en Vivo</h3>
-                <p>Puedes acceder al chat en vivo en la esquina inferior derecha de la página.</p>
-            </div>
+                    <label for="telefono-tel">Número de Teléfono:</label>
+                    <input type="tel" id="telefono-tel" name="telefono" required>
 
-            <div class="contact-item">
-                <h3>Redes Sociales</h3>
-                <p>Síguenos en nuestras redes sociales para obtener actualizaciones:</p>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
+                    <label for="mensaje-tel">Mensaje:</label>
+                    <textarea id="mensaje-tel" name="mensaje" required></textarea>
+
+                    <button type="submit">ENVIAR</button>
+                </form>
+           
         </div>
 
-        <!-- Imagen de contacto -->
-        <div class="contact-image">
-            <img src="contactos1.jpg" alt="Imagen de contacto">
-        </div>
+    
     </div>
 
     <!-- Pie de página -->
     <footer>
-        <p>© 2025 Service Desk. Todos los derechos reservados.</p>
+        <div class="contact-image">
+            <img src="contactos1.jpg" alt="Imagen de contacto">
+        </div>
     </footer>
 </body>
 </html>

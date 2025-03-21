@@ -9,23 +9,71 @@
         // Función para manejar el envío del formulario y mostrar el mensaje de éxito
         function enviarFormulario(event) {
             event.preventDefault(); // Evita que se recargue la página al enviar el formulario
-
-            // Mostrar el mensaje de agradecimiento
-            alert("Gracias por tu mensaje, nos contactaremos contigo lo antes posible");
-
+    
+            // Crear el modal de agradecimiento
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.left = '0';
+            modal.style.top = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.textAlign = 'center';
+            modal.setAttribute('id', 'popup-modal');
+    
+            // Crear el contenido del modal
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = 'white';
+            modalContent.style.padding = '20px';
+            modalContent.style.borderRadius = '10px';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.width = '80%';
+    
+            const modalMessage = document.createElement('h2');
+            modalMessage.textContent = '¡Gracias por tu mensaje!';
+            modalContent.appendChild(modalMessage);
+    
+            const modalParagraph = document.createElement('p');
+            modalParagraph.textContent = 'Nos contactaremos contigo lo antes posible.';
+            modalContent.appendChild(modalParagraph);
+    
+            // Botón para cerrar el modal
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Cerrar';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.backgroundColor = '#4CAF50';
+            closeButton.style.color = 'white';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '5px';
+            closeButton.style.cursor = 'pointer';
+    
+            // Función para cerrar el modal
+            closeButton.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+    
+            modalContent.appendChild(closeButton);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+    
             // Limpiar el formulario después de enviarlo
             event.target.reset();
         }
     </script>
+    
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="menu-nav">
-        <a href="index.html" class="active">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="incidentes.html">Incidentes</a>
         <a href="request.html">Solicitar</a>
         <a href="folders.html">Accesos a Folder</a>
-        <a href="contact.html">Contacto</a>
+        <a href="contact.html" class="active">Contacto</a>
+
     </nav>
 
     <!-- Sección de contacto -->
@@ -34,26 +82,27 @@
             <br>
             <br>
             <h1>Contacta a Service Desk</h1>
-            <p>Para cualquier consulta o solicitud, puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
+            <p>Para cualquier duda, puedes ponerte en contacto con nosotros a través de los siguientes medios:</p>
 
             <!-- Formulario en la sección de Teléfono -->
             <div class="contact-item">
         
-                <form onsubmit="enviarFormulario(event)">
+                <form method="POST" action="procesar_formulario.php" onsubmit="enviarFormulario(event)">
                     <label for="usuario-tel">Usuario:</label>
                     <input type="text" id="usuario-tel" name="usuario" required>
-
+                
                     <label for="correo-tel">Correo Electrónico:</label>
                     <input type="email" id="correo-tel" name="correo" required>
-
+                
                     <label for="telefono-tel">Número de Teléfono:</label>
                     <input type="tel" id="telefono-tel" name="telefono" required>
-
+                
                     <label for="mensaje-tel">Mensaje:</label>
                     <textarea id="mensaje-tel" name="mensaje" required></textarea>
-
+                
                     <button type="submit">ENVIAR</button>
                 </form>
+                
            
         </div>
 

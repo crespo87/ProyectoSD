@@ -5,13 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mystyle.css">
     <title>Solicitar - Service Desk</title>
+    <script>
+        // Función para agregar la clase 'active' al enlace correspondiente
+        window.onload = function() {
+            const currentPage = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo de la URL
+            const links = document.querySelectorAll('.menu-nav a');
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        };
+
+        // Función para manejar el envío del formulario y mostrar el mensaje de éxito
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita que se recargue la página al enviar el formulario
+    
+            // Crear el modal de agradecimiento
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.left = '0';
+            modal.style.top = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.textAlign = 'center';
+            modal.setAttribute('id', 'popup-modal');
+    
+            // Crear el contenido del modal
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = 'white';
+            modalContent.style.padding = '20px';
+            modalContent.style.borderRadius = '10px';
+            modalContent.style.maxWidth = '500px';
+            modalContent.style.width = '80%';
+    
+            const modalMessage = document.createElement('h2');
+            modalMessage.textContent = '¡Su Solicitud ha sido enviada!';
+            modalContent.appendChild(modalMessage);
+    
+            const modalParagraph = document.createElement('p');
+            modalParagraph.textContent = 'Nos contactaremos contigo lo antes posible.';
+            modalContent.appendChild(modalParagraph);
+    
+            // Botón para cerrar el modal
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Cerrar';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.backgroundColor = '#4CAF50';
+            closeButton.style.color = 'white';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '5px';
+            closeButton.style.cursor = 'pointer';
+    
+            // Función para cerrar el modal
+            closeButton.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+    
+            modalContent.appendChild(closeButton);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+    
+            // Limpiar el formulario después de enviarlo
+            event.target.reset();
+        }
+    </script>
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav class="menu-nav">
-        <a href="index.html" class="active">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="incidentes.html">Incidentes</a>
-        <a href="request.html">Solicitar</a>
+        <a href="request.html" class="active">Solicitar</a> <!-- La clase 'active' ya está aquí por defecto -->
         <a href="folders.html">Accesos a Folder</a>
         <a href="contact.html">Contacto</a>
     </nav>
@@ -25,7 +97,7 @@
         <p>Por favor, completa el siguiente formulario para realizar tu solicitud de software o hardware.</p>
 
         <!-- Formulario de solicitud -->
-        <form action="submit_request.php" method="POST" class="request-form">
+        <form class="request-form" onsubmit="enviarFormulario(event)">
             <div class="form-group">
                 <label for="username">Nombre de Usuario:</label>
                 <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
